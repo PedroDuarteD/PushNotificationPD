@@ -27,11 +27,15 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+
 public class Notificacao_Esan_BD_14 extends BroadcastReceiver {
     int notificationId=100;
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
+
 
         String url ="https://esan-tesp-ds-paw.web.ua.pt/tesp-ds-g14/FOOD_CHOOSE/api/utilizador/verificacao.php";
 
@@ -39,6 +43,7 @@ public class Notificacao_Esan_BD_14 extends BroadcastReceiver {
                 PreferenceManager.getDefaultSharedPreferences(context);
         String email =preferences.getString("email","");
         String pass=preferences.getString("pass","");
+
 
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,

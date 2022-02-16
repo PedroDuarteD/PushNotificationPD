@@ -4,11 +4,16 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 class PushNotificatioPd {
-  static const MethodChannel _channel = MethodChannel('push_notificatio_pd');
+
+   static Future  notification(String texto,String titulo) async {
+    await MethodChannel('push_notificatio_pd').invokeMethod('notification',{
+      "texto": texto,
+      "titulo": titulo
+    });
+  }
 
 
-
-  static Future  notification_push_event() async {
-    await _channel.invokeMapMethod('not_event');
+   static Future  notification_push_event() async {
+    await MethodChannel('push_notificatio_pd').invokeMapMethod('not_event');
   }
 }

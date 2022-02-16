@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:push_notificatio_pd/push_notificatio_pd.dart';
 
 void main() {
@@ -24,8 +22,9 @@ initPlatformState() async {
 
     try {
       await PushNotificatioPd.notification_push_event();
-    } on PlatformException {
 
+    }on Exception{
+      print("Erro");
     }
 
   }

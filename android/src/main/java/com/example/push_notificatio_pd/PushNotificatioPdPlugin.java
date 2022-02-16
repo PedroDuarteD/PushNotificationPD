@@ -39,10 +39,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 
 /** PushNotificatioPdPlugin */
 public class PushNotificatioPdPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
-  /// The MethodChannel that will the communication between Flutter and native Android
-  ///
-  /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-  /// when the Flutter Engine is detached from the Activity
+
   private MethodChannel channel;
   int notificationId = 100;
   private Activity activity;
@@ -90,6 +87,10 @@ public class PushNotificatioPdPlugin implements FlutterPlugin, MethodCallHandler
       noti.notify(notificationId, builder.build());
 
     }else if(call.method.equals("not_event")){
+
+
+
+     // String url=  call.argument("url_");
 
 
       String url ="https://esan-tesp-ds-paw.web.ua.pt/tesp-ds-g14/FOOD_CHOOSE/api/utilizador/verificacao.php";
@@ -186,29 +187,7 @@ notificationId+=1;
                     });
                     receber.add(pedido_bd);
 
-                    /**
-                     *
-                     NotificationCompat.Builder builder =
-                     new NotificationCompat.Builder(getApplicationContext(),String.valueOf(notificationId))
-                     .setSmallIcon(getApplicationContext().getResources().getIdentifier("food_choose", "drawable", getApplicationContext().getPackageName()))
-                     .setContentTitle("Food Choose")
-                     .setContentText("Mensagem "+id_+" !");
 
-                     NotificationManager notificationManager =
-                     (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                     NotificationChannel channel = new NotificationChannel(
-                     String.valueOf(notificationId),
-                     String.valueOf(notificationId),
-                     NotificationManager.IMPORTANCE_DEFAULT);
-                     channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DISCRIPTION");
-                     notificationManager.createNotificationChannel(channel);
-                     }
-
-                     startForeground(notificationId,builder.build() );
-                     *
-                     * */
 
                   } catch (JSONException e) {
                     e.printStackTrace();
@@ -236,8 +215,6 @@ notificationId+=1;
         }
       };
       queue.add(postRequest);
-
-
 
       /*
       Intent startServiceIntent = new Intent(context, Meu_servico.class);

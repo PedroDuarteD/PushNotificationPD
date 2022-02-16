@@ -1,6 +1,6 @@
 name: push_notificatio_pd
 description: Permite lançar notificações para utilizadores resgistados em base de dados
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/PedroDuarteD/PushNotificationPD
 
 environment:
