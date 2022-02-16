@@ -1,7 +1,7 @@
 name: push_notificatio_pd
-description: A new Flutter project.
+description: Permite lançar notificações
 version: 0.0.1
-homepage:
+homepage: https://github.com/PedroDuarteD/PushNotificationPD
 
 environment:
   sdk: ">=2.16.1 <3.0.0"

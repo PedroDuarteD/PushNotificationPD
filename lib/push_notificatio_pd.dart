@@ -10,6 +10,5 @@ class PushNotificatioPd {
 
   static Future  notification_push_event() async {
     await _channel.invokeMapMethod('not_event');
-
   }
 }
