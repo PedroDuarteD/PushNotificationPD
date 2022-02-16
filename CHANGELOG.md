@@ -1,3 +1,1 @@
-## 0.0.1
-
-* TODO: Describe initial release.
+Este plugin permite fazer com que o nativo em java execute querys a um ficheiro guardado no filesystem do servidor, caso tenha dados para o utilizador facilmente ciar as devias notificações para depois serem exibidas no android
